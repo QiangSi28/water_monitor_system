@@ -1,4 +1,3 @@
-# water_monitor_system
 <!-- title -->
 # CSCE4910&4915 - COMPUTER ENGINEERING SENIOR DESIGN PROJECT
 
