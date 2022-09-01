@@ -72,13 +72,13 @@ Table of Contents
 <!-- Implementation -->
 <a name="heading-4"></a>
 ## Implementation
-&ensp;&ensp;&ensp;&ensp;&ensp;鈥籑ain Controller: The eight subsystems connect to a soft wireless access point and transfer the acquired data to it wirelessly. The SoftAP then transfers the data to the main controller to be processed and sent to the cloud through either WiFi or LTE.
+&ensp;&ensp;&ensp;&ensp;&ensp;※Main Controller: The eight subsystems connect to a soft wireless access point and transfer the acquired data to it wirelessly. The SoftAP then transfers the data to the main controller to be processed and sent to the cloud through either WiFi or LTE.
 
-&ensp;&ensp;&ensp;&ensp;&ensp;鈥籗ubsystems: To grow shrimp, our system controls eight important factors when growing shrimp: Ammonia, Feed, Minerals, Oxygen, pH, Salinity, Temperature, and Turbidity.
+&ensp;&ensp;&ensp;&ensp;&ensp;※Subsystems: To grow shrimp, our system controls eight important factors when growing shrimp: Ammonia, Feed, Minerals, Oxygen, pH, Salinity, Temperature, and Turbidity.
 
-&ensp;&ensp;&ensp;&ensp;&ensp;鈥籆loud: The cloud consists of MQTT messages sent to AWS IoT Core, then processed through a Lambda function, and finally stored into DynamoDB.
+&ensp;&ensp;&ensp;&ensp;&ensp;※Cloud: The cloud consists of MQTT messages sent to AWS IoT Core, then processed through a Lambda function, and finally stored into DynamoDB.
 
-&ensp;&ensp;&ensp;&ensp;&ensp;鈥籑obile App: The mobile app connects to AWS DynamoDB to retrieve and display the acquired data to the user.  
+&ensp;&ensp;&ensp;&ensp;&ensp;※Mobile App: The mobile app connects to AWS DynamoDB to retrieve and display the acquired data to the user.  
 <br />
 
 
@@ -87,38 +87,38 @@ Table of Contents
 <a name="heading-5"></a>
 ## Organization of the Project
 ###### Salinity Subsystem:       
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籱onitors and controls the salinity (salt ratio) of the water for growing healthy shrimp.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※monitors and controls the salinity (salt ratio) of the water for growing healthy shrimp.
 ###### Minerals Subsystem:
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籱onitors and controls the minerals for growing healthy shrimp.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※monitors and controls the minerals for growing healthy shrimp.
 ###### Turbidity Subsystem:      
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籱onitors and controls the turbidity of the water necessary for the healthy growth of shrimp.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※monitors and controls the turbidity of the water necessary for the healthy growth of shrimp.
 ###### Wireless Communication:   
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籸eceives all the acquired sensor data on the main controller using wireless protocols.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※receives all the acquired sensor data on the main controller using wireless protocols.
 
 ----
 ###### Temperature Subsystem:    
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籱onitors and controls the temperature of water tank for growing shrimp, and sends the temperature value to the main controller. 
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※monitors and controls the temperature of water tank for growing shrimp, and sends the temperature value to the main controller. 
 ###### Wireless Communication:   
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籹ends the received data to the cloud using wireless communication.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※sends the received data to the cloud using wireless communication.
 ###### Mobile app:               
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籥 cloudbased mobile app to monitor all subsystems and report to the user. Also, in the event of WiFi not being available, the system will switch to cellular communications to send its data to the cloud.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※a cloudbased mobile app to monitor all subsystems and report to the user. Also, in the event of WiFi not being available, the system will switch to cellular communications to send its data to the cloud.
 
 ----
 ###### Ammonia Subsystem:
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籱onitors and controls the ammonia level needed to grow shrimp.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※monitors and controls the ammonia level needed to grow shrimp.
 ###### PH Subsystem:        
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籥n automatic acidity controller subsystem with a pH probe to make sure that the acidity of the water is appropriate for shrimp growth and sends the pH value to main controller.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※an automatic acidity controller subsystem with a pH probe to make sure that the acidity of the water is appropriate for shrimp growth and sends the pH value to main controller.
 ###### Backup Batteries:  
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籩ach subsystem has its own backup backup battery to prevent power outage.       
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※each subsystem has its own backup backup battery to prevent power outage.       
 
 
 ----
 ###### Feed Subsystem:
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籥n automatic feed controller subsystem for periodic feeding, and sends the status message to main controller.
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※an automatic feed controller subsystem for periodic feeding, and sends the status message to main controller.
 ###### Oxygen Subsystem:            
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籥n automatic oxygen controller subsystem to meet the desired levels of oxygen for the shrimp to survive and grow, and sends the oxygen level value to the main controller.  
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※an automatic oxygen controller subsystem to meet the desired levels of oxygen for the shrimp to survive and grow, and sends the oxygen level value to the main controller.  
 ###### PCB Design:  
-&ensp;&ensp;&ensp;&ensp;&ensp;  鈥籩ach subsystem has its own PCB to reduce sizes(easy to manage), chance of errors, and possibilities of short circuit.  
+&ensp;&ensp;&ensp;&ensp;&ensp;  ※each subsystem has its own PCB to reduce sizes(easy to manage), chance of errors, and possibilities of short circuit.  
 ###### Enclosures:  
 
 Subsystems | Length(cm) | Width(cm) | Height(cm) |
@@ -162,5 +162,5 @@ Feed | 19.5 | 14.5 | 13 |
 <a name="heading-8"></a>
 ## References
 * [1] Gohost Shrimp Picture(https://acuariopets.com/how-to-take-care-of-pregnant-ghost-shrimps/)
-* [2] NOAA鈥檚 Trade data(https://www.st.nmfs.noaa.gov/apex/f?p=213:19:10985154164477::NO:::)
+* [2] NOAA’s Trade data(https://www.st.nmfs.noaa.gov/apex/f?p=213:19:10985154164477::NO:::)
 * [3] Undercurrent News(https://www.undercurrentnews.com/2020/07/02/us-shrimp-imports-finally-crashed-in-may-latest-noaa-trade-data-show/)
